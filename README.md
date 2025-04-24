@@ -4,6 +4,9 @@ A showcase of modern UI animations and microinteractions created with Anime.js. 
 
 ![Microinteractions Demo](/assests/readme-screenshot.png)
 
+## Live Demo
+Check out the live demo [here](https://hilarious-caramel-49e114.netlify.app/).
+
 ## Overview
 
 This gallery showcases various animation techniques including:
