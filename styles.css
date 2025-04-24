@@ -1,0 +1,512 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* For headings */
+  h1, h2, h3, .text-effect-headline { 
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+  }
+  
+  /* Body text */
+  body, p, button { 
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    opacity: 0;
+  }
+  
+  section {
+    margin: 5rem 0;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+  }
+  
+  h2:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+    background: #00f7ff;
+    transition: width 0.4s ease;
+  }
+  
+  h2:hover:after {
+    width: 100%;
+  }
+  
+  /* Logo styling */
+  .logo-container {
+    margin: 2rem auto;
+    width: 300px;
+    max-width: 90%;
+  }
+  
+  /* ========== BUTTON ANIMATIONS ========== */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  /* Base button styles */
+  .animated-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    min-width: 160px;
+    opacity: 0;
+  }
+  
+  /* Ripple Button */
+  .ripple-button {
+    background: #3498db;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+  }
+  
+  .ripple-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    pointer-events: none;
+    transform-origin: center;
+  }
+  
+  /* Gradient Button */
+  .gradient-button {
+    background: linear-gradient(45deg, #00c3ff, #4e00c2);
+    box-shadow: 0 4px 6px rgba(0, 195, 255, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .gradient-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff00cc, #ff9500);
+    transition: left 0.5s ease;
+    z-index: -1;
+    border-radius: 4px;
+  }
+  
+  .gradient-button:hover::before {
+    left: 0;
+  }
+  
+  /* Border Button */
+  .border-button {
+    background: transparent;
+    border: 2px solid #00f7ff;
+    color: #00f7ff;
+    box-shadow: 0 4px 6px rgba(0, 247, 255, 0.2);
+  }
+  
+  /* Icon Button */
+  .icon-button {
+    background: #9b59b6;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px rgba(155, 89, 182, 0.3);
+  }
+  
+  .icon-button .button-text {
+    margin-right: 0;
+  }
+  
+  .icon-button svg {
+    width: 0;
+    height: 20px;
+    transition: width 0.3s ease, margin-left 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .icon-button:hover svg {
+    width: 20px;
+    margin-left: 5px;
+  }
+  
+  /* ========== LOADING ANIMATIONS ========== */
+  .loading-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 0;
+  }
+  
+  .loading-item {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    opacity: 0;
+  }
+  
+  /* Circle Loading */
+  .circle-loading {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid rgba(0, 247, 255, 0.1);
+    border-top: 4px solid #00f7ff;
+  }
+  
+  /* Dot Loading */
+  .dot-loading {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: #ff416c;
+    border-radius: 50%;
+  }
+  
+  /* Text Loading */
+  .text-loading {
+    font-weight: bold;
+    position: relative;
+    color: #00f7ff;
+  }
+  
+  .text-loading::after {
+    content: '|';
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  /* Eye Loading */
+  .eye-container {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* ========== CARD TRANSITIONS ========== */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .card {
+    width: 250px;
+    height: 280px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    color: #00f7ff;
+  }
+  
+  .card h3 {
+    margin-bottom: 1rem;
+    color: #00f7ff;
+  }
+  
+  .card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  /* Container that follows scroll */
+.portfolio-link-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+  }
+
+  .portfolio-link-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  /* Main button styling */
+  .portfolio-fab {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00c3ff, #4e00c2);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 195, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .portfolio-fab:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 25px rgba(0, 195, 255, 0.6);
+  }
+  
+  /* The icon inside the button */
+  .portfolio-fab svg {
+    width: 30px;
+    height: 30px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  /* The expanding info panel */
+  .portfolio-info {
+    position: absolute;
+    right: 70px;
+    top: 40%;
+    transform: translateY(-50%) translateX(20px);
+    background: rgba(20, 20, 40, 0.85);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 200px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    transition-delay: 0s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .portfolio-link-container:hover .portfolio-info {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    pointer-events: all;
+    transition-delay: 0s; 
+  }
+
+  .portfolio-link-container .portfolio-info {
+    transition-delay: 0.5s;
+  }
+
+  .portfolio-info:hover {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    pointer-events: all;
+    transition-delay: 0s;
+  }
+  
+  
+  .portfolio-info h4 {
+    margin: 0 0 8px 0;
+    color: #00f7ff;
+  }
+  
+  .portfolio-info p {
+    margin: 0 0 12px 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  .portfolio-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background: linear-gradient(45deg, #ff00cc, #ff9500);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .portfolio-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 0, 204, 0.4);
+  }
+  
+  /* Pulse animation for the button */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 195, 255, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(0, 195, 255, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 195, 255, 0);
+    }
+  }
+  
+  .portfolio-fab {
+    animation: pulse 2s infinite;
+  }
+  
+  /* ========== TEXT EFFECTS ========== */
+  .text-effects-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    opacity: 0; /* Will be animated in */
+  }
+  
+  .text-effect-headline {
+    font-size: clamp(1.3rem, 5vw, 2.2rem);
+    margin-bottom: 1.5rem;
+    color: #00f7ff;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .text-effect-chars {
+    display: inline-block;
+    opacity: 0;
+  }
+  
+  .text-effect-paragraph {
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .text-effect-words {
+    opacity: 0;
+    display: inline-block;
+  }
+  
+  /* General Hover Transitions */
+  .animated-button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .button-container,
+    .loading-container,
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .animated-button {
+      width: 80%;
+    }
+    
+    .card {
+      width: 80%;
+    }
+
+    .portfolio-link-container {
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .portfolio-info {
+        right: 0;
+        bottom: 70px;
+        top: auto;
+        transform: translateY(0) translateX(0);
+        width: 180px;
+      }
+
+      .portfolio-link-container:hover .portfolio-info {
+        transform: translateY(0) translateX(0);
+      }
+  }
