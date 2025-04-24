@@ -354,7 +354,7 @@ body {
   .portfolio-info {
     position: absolute;
     right: 70px;
-    top: 40%;
+    top: 10%;
     transform: translateY(-50%) translateX(20px);
     background: rgba(20, 20, 40, 0.85);
     backdrop-filter: blur(10px);
