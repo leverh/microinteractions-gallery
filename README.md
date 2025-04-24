@@ -23,7 +23,6 @@ This gallery showcases various animation techniques including:
 - **SVG Path Drawing**:The logo animates each path individually to create the appearance of the logo being drawn in real-time
 - **Stroke Animation**: Uses `stroke-dasharray` and `stroke-dashoffset` properties animated with Anime.js
 - **Sequential Timing**: Paths are animated with staggered delays for a more organic feel
-- **Hover Interactivity**: The animation can be triggered again by hovering over the logo
 
 The animation demonstrates how SVG paths can be manipulated to create engaging entrance animations for logos and icons. This technique can be particularly effective for brand reveals and loading screens.
 
